@@ -638,7 +638,7 @@ public class CodePush extends CordovaPlugin {
 
     private Boolean hasIonicWebViewEngine() {
         try {
-            Class.forName("com.ionicframework.cordova.webview.IonicWebViewEngine");
+            Class.forName("org.apache.cordova.x5engine.X5WebViewEngine");
             return true;
         } catch (ClassNotFoundException e) {}
         return false;
@@ -646,7 +646,7 @@ public class CodePush extends CordovaPlugin {
 
     private void setServerBasePath(final String serverPath) {
         try {
-            Class ionicWebViewEngineClass = Class.forName("com.ionicframework.cordova.webview.IonicWebViewEngine");
+            Class ionicWebViewEngineClass = Class.forName("org.apache.cordova.x5engine.X5WebViewEngine");
             final Object ionicWebViewEngine = ionicWebViewEngineClass.cast(this.mainWebView.getEngine());
             final Method setServerBasePath = ionicWebViewEngineClass.getMethod("setServerBasePath", String.class);
 
